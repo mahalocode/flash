@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url(https://fonts.googleapis.com/css?family=Merriweather:900italic);
 
 .booyah-box {
   -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
@@ -24,9 +25,12 @@ body {
   font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
 }
 
-.navbar.navbar-inverse {
+.navbar-inverse .navbar-brand {
+  color: #E3E85A;
+  font-family: 'Merriweather', serif;
   background:url('/assets/congruent_outline.png');
   border-radius: 0;
   box-shadow: 0px 2px 3px #2a2a2a;
 }
+
 
