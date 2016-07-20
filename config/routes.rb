@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   #       get 'short'
   #       post 'toggle'
   #     end
-  #
+  root 'places#index'
   #     collection do
   #       get 'sold'
   #     end
