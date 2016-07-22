@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   #       post 'toggle'
   #     end
   root 'places#index'
+  resources :places
   #     collection do
   #       get 'sold'
   #     end
