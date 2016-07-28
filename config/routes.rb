@@ -1,7 +1,9 @@
-Rails.application.routes.draw do
+Nomster::Application.routes.draw do
+root 'places#index'
+resources :places
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
@@ -20,8 +22,6 @@ Rails.application.routes.draw do
   #       get 'short'
   #       post 'toggle'
   #     end
-  root 'places#index'
-  resources :places
   #     collection do
   #       get 'sold'
   #     end
