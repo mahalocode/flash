@@ -9,15 +9,15 @@ def new
   @place = Place.new
 end
 
-def  creat
+def create
   Place.create(place_params)
-  redirec_to_root_path
+  redirect_to root_path
   end
 
   private
 
   def place_params
-    param.require(:place).permit(:name, :description, :address)
+    params.require(:place).permit(:name, :description, :address)
 end
 
 end
