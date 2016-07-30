@@ -1,5 +1,5 @@
 class PlacesController < ApplicationController
-    before_action :authenticate_user!, only: [:new, :create, :edit]
+    before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
  def index
   @places = Place.order("name").page(params[:page]).per_page(1)
@@ -40,9 +40,13 @@ end
 
   def destroy
     @place = Place.find(params[:id])
-    @place.destroy
-    redirect_to root_path
+    if @place.user != current_user
+      return render text: 'Not Allowed', status: :forbidden
   end
+
+  @place.destroy
+  redirect_to root_path
+end
 
   private
 
