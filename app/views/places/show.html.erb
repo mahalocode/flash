@@ -40,10 +40,7 @@
 </div>
 
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Comment here
-</button>
+
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -60,20 +57,28 @@
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-        <%= f.submit "Comment here", class: 'btn btn-primary' %>
+       <%= f.submit "Save changes", class: 'btn btn-primary' %>
       </div>
     <% end %>
     </div>
   </div>
 </div>
+<div classs="col-xs-10 col-xs-offset-1">
+  <h1 class="pull-left">Comments</h1>
+  <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+ Comment here
+</button>
+</div>
 
-  <h1>Comments</h1>
+<div class="clear"></div>
 
   <% @place.comments.each do |comment| %>
-  <div>
+  <div class="col-xs-12 col-sm-6">
    <blockquote>
-    <b><%= comment.rating %></b> -
+   <% if comment.humanized_rating.present? %>
+    <b><%= comment.humanized_rating %></b> -
+    <% end %>
    <%= comment.message %>
    <small><%= comment.user.email %></small>
   </blockquote>
