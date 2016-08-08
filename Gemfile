@@ -10,6 +10,7 @@ gem 'rails', '4.1.9'
 gem 'shotgun',  '>= 0.9.1'
 # Use postgresql as the database for Active Record
 gem 'pg'
+gem "fog"
 # Use SCSS for stylesheets
 gem 'ruby'
 gem 'bootstrap-sass', '~> 3.3.5.1'
