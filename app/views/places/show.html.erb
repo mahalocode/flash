@@ -67,7 +67,7 @@
   <h1 class="pull-left">Comments</h1>
   <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
- Comment here
+ Click here
 </button>
 </div>
 
@@ -85,57 +85,47 @@
  </div>
 <% end %>
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#addPhoto">
-  Upload a photo
-</button>
 
-<div class="modal fade" tabindex="-1" role="dialog" id="addPhoto">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Upload a photo</h4>
+  <!-- Photo modal -->
+
+   <div class="modal fade' id="myModalphoto" tabindex="-1" role="dialog" arial-labelledby="myModalLabel">
+   <div class="modal-dialog" role="document">
+   <div class="modal-content">
+   <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Comment here!</h4>
       </div>
+      <div class="modal-body">
 
-
-<!-- Photo Modal -->
-  <div class="clear"></div>
-  <div class="pull-right">
-  </div>
-</div>
-<div class="modal fade" id="myModalphoto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalphoto">Upload a Photo</h4>
-      </div>
-      <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
-
-        <div class="modal-body">
+<%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
+        
           <%= f.input :caption %>
-          
+          <%= f.input :picture %>
         </div>
 
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <%= f.submit "Upload a Photo", class: 'btn btn-primary' %>
-        </div>
-      <% end %>
-    </div>
-  </div>
-</div>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <%= f.submit "Upload a Photo", class: 'btn-btn-primary' %>
+          </div>
+          <% end %>
 
- <div class="col-xs-10 col-xs-offset-1">
-  <h1 class="pull-left">Photos</h1>
+          </div>
+         </div>
+        </div>
+
+      <!-- Ending  Here -->
+        
+
+        <div class="col-xs-10 col-xs-offset-1">
+          <h1 class="pull-right">Photos</h1>
+
   
-  <!-- Button trigger modal -->
+  <!-- Button trigger photo modal -->
+        
   <button class="btn btn-primary btn-lg pull-right" data-toggle="modal" data-target="#myModalphoto">
-    Upload a Photo
+  Add
   </button>
-</div>
+
 
 <div class="clear"></div>
 
@@ -145,9 +135,10 @@
     
       <%= image_tag photo.picture %>
        <%= photo.caption %>
-    
-  </div>
+
+    </div>
 <% end %>
+
 <!-- End of Photo Modal -->
 
  <br />

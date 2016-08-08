@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   def index
-    @palces= Place.all
+    @places= Place.all
 end
 
   def new

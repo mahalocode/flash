@@ -5,10 +5,8 @@ class CreatePhotos < ActiveRecord::Migration
       t.text :caption
 
       t.integer :place_id
-      t.timestamps
+      t.timestamp
     end
-
-    add_index :comments, [:user_id, :place_id]
     add_index :photos, :place_id
 
  end
