@@ -9,5 +9,5 @@ class Place < ActiveRecord::Base
   
   validates :name, length: {minimum: 3 }, :presence => true
   validates :address, length: {minimum: 3 } 
-  validates :description, length: {minimum: 3, maximum: 50, too_long: "#{50} characters is the maximum allowed"}, presence: true
+  validates :description, length: {minimum: 3, maximum: 50, too_long: "#{150} characters is the maximum allowed"}, presence: true
 end
